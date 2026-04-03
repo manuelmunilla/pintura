@@ -18,7 +18,7 @@ export async function onRequestPost(context) {
             personalizations: [
                 { to: [{ email: "manuelmunilla@gmail.com", name: "Manuel Munilla" }] }
             ],
-            from: { email: "no-reply@tu-dominio.com", name: "Web Contacto" },
+            from: { email: "no-reply@tu-dominio.com", name: "sitio de Pinturas Cloudflare" },
             subject: `Nueva consulta de ${nombre}`,
             content: [
                 {
