@@ -1,0 +1,439 @@
+/* =========================================
+   Configuración General
+   ========================================= */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 3rem; 
+    color: #000;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #888;
+    margin: 0 10px; /* Aumentamos de 15px a 25px p */
+    font-size: 0.85rem; /* Bajamos apenas el tamaño  */
+    transition: color 0.3s;
+    font-weight: 350;
+    letter-spacing: 1px; /* Agregamos un leve espacio */
+}
+
+nav a:hover, nav a.active {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+/* =========================================
+   Grilla del Portfolio (Alineación por base de IMAGEN)
+   ========================================= */
+ /* Clase para el título de la obra vendida */
+.titulo-vendida {
+    display: inline-flex; /* Alinea título y punto */
+    align-items: center;  /* Centra verticalmente */
+    gap: 8px;              /* Espacio entre texto y punto */
+}
+
+/* El punto rojo más grande */
+.punto-rojo::after {
+    content: "";           /* Contenido vacío para el pseudo-elemento */
+    display: inline-block; /* Permite darle tamaño */
+    width: 5px;           /* Ancho del punto */
+    height: 5px;          /* Alto del punto */
+    background-color: #b00020; /* Color rojo sutil */
+    border-radius: 50%;     /* Lo hace circular */
+    vertical-align: middle; /* Ajuste fino de alineación */
+}
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Quitamos el align-items: end de aquí para que no afecte al texto */
+
+}
+.series-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.4s ease;
+    margin-bottom: 35px;
+}
+
+/* Contenedor del enlace e imagen para forzar la base */
+.series-card a {
+    display: flex;
+    align-items: flex-end; /* Aquí es donde ocurre la magia: alinea la imagen al fondo */
+    height: 100%; /* Empuja la imagen hacia abajo si el vecino es más alto */
+    margin-bottom: 12px;
+}
+
+.series-card:hover {
+    transform: translateY(-5px);
+}
+
+.series-card img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease, box-shadow 0.4s ease;
+    display: block;
+}
+
+.series-card:hover img {
+    filter: grayscale(0%);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.series-card h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.series-card .obra-tecnica {
+    font-size: 0.8rem;
+    color: #777; 
+    font-weight: 300;
+    margin: 2px 0 0 0;
+}
+
+.series-card .obra-serie {
+    font-size: 0.8rem;
+    color: #777; 
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px 0 20px 0;
+}
+.series-card .obra-epigrafe {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 300;
+    font-style: italic;
+    margin: 4px 0 0 0;
+    line-height: 1.4;
+}
+/* Clase para que la tarjeta ocupe las dos columnas */
+.series-card.destacada {
+    grid-column: 1 / -1; /* Va desde la línea 1 hasta la última */
+    max-width: 100%;     /* Asegura que use todo el ancho */
+}
+
+/* Opcional: ajustar el alto de la imagen destacada si es muy grande */
+.series-card.destacada img {
+    max-height: 80vh; 
+    object-fit: contain; /* Evita que se corte la imagen */
+    margin: 0 auto;      /* Centra la imagen si no ocupa todo el ancho */
+}
+
+/* Fila asimétrica para hermanar una vertical y una apaisada sin /* Fila que respeta el gap global de 40px */
+/* Fila asimétrica equilibrada */
+/* Fila asimétrica: se mantiene igual en PC y Móvil */
+.fila-proporcional {
+    display: grid;
+    /* Mantenemos la asimetría siempre para nivelar alturas */
+    grid-template-columns: 0.8fr 1.2fr; 
+    gap: 40px; 
+    grid-column: 1 / -1; 
+    align-items: end;    
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .fila-proporcional {
+        gap: 15px; /* Solo achicamos el espacio, no cambiamos las columnas */
+        /* Eliminamos el 1fr 1fr que rompió el diseño */
+    }
+}
+/* Eliminamos márgenes internos que puedan estar sumando espacio */
+.fila-proporcional .series-card {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.fila-proporcional img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción original sin recortar */
+    display: block;
+}
+
+/* =========================================
+   Secciones Bio y Contacto
+   ========================================= */
+.main-bio {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bio-image {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.bio-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: grayscale(40%);
+    display: block;
+    opacity: 0.6;
+}
+
+.bio-text h2, 
+.contact-container h2 {
+    font-size: 1.4rem; 
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.bio-text p, 
+.contact-container p {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+/* Espaciado para el Statement */
+.statement-title {
+    margin-top: 50px; /* Separa el statement de la biografía */
+    font-size: 1.1rem;
+    color: #888; /* Color más suave para diferenciarlo del título principal */
+}
+
+.bio-text p strong {
+    font-weight: 400;
+    color: #000;
+}
+
+/* Mejora la lectura de párrafos largos */
+.bio-text p {
+    margin-bottom: 25px;
+    text-align: justify; /* Opcional, para un look más editorial */
+    hyphens: auto;
+}
+
+/* =========================================
+   Estilos de Contacto y Formulario
+   ========================================= */
+.contact-container {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact-links li {
+    margin: 4px 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #888;
+}
+
+.contact-links li strong {
+    font-weight: 400;
+    color: #333;
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.contact-links a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact-links a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.contact-intro {
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.contact-form {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 35px; 
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0; 
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #222; 
+    background-color: transparent;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #999; 
+    font-size: 0.9rem;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #000; 
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.btn-submit {
+    background: transparent;
+    color: #000;
+    border: 1px solid #000;
+    padding: 12px 40px;
+    padding: 10px 50px; /* era 12 y 40   */
+    font-size: 0.7rem; /* Un poco más chico y elegante */
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Mayor espaciado */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+.btn-submit:hover {
+    background: #000;
+    color: #fff;
+}
+
+.other-channels {
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+/* =========================================
+   Footer y Animaciones
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 60px 40px;
+    font-size: 0.75rem;
+    color: #bbb;
+    font-weight: 300;
+}
+/* Estilos para los íconos del footer */
+.footer-icons {
+    margin-bottom: 20px;
+}
+
+.footer-icons a {
+    color: #bbb; /* Color gris suave como el texto del footer */
+    font-size: 1.2rem;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #000; /* Negro al pasar el mouse */
+}
+
+footer p {
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   Responsividad
+   ========================================= */
+@media (max-width: 768px) {
+    header h1 {
+        letter-spacing: 4px;
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    /* En móvil, donde las fotos suelen ser iguales de ancho, 
+       mantenemos la alineación inferior */
+    .series-card a {
+        align-items: flex-end;
+    }
+
+    .series-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .series-card .obra-tecnica, 
+    .series-card .obra-epigrafe {
+        font-size: 0.7rem;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+}

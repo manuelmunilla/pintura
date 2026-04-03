@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel Munilla | Bio & Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <header>
+        <h1>Manuel Munilla</h1>
+        <nav>
+            <a href="index.html">Galería</a>
+            <a href="archivo.html">Archivo</a>
+            <a href="bio.html" class="active">Bio / Contacto</a>
+        </nav>
+    </header>
+
+    <main class="main-bio fade-in">
+        
+        <div class="bio-container">
+            
+            <div class="bio-image">
+                <img src="img/taller.jpg" alt="Manuel Munilla en su taller" title="Manuel Munilla en su taller">
+            </div>
+
+            <div class="bio-text">
+                <h2 class="statement-title">Perspectiva</h2>
+                <p>La práctica artística actual de Manuel Munilla se centra en la exploración del lenguaje abstracto y la técnica mixta. En un proceso de escucha y hallazgo, el artista busca responder a lo que los materiales evocan o demandan, permitiendo que la obra revele su propia naturaleza.</p>
+                
+                <p>En su producción se interesa por representar las energías y estructuras subyacentes de la realidad, plasmando ideas metafísicas donde convergen varios lenguajes, como los de la filosofía, la física y la poesía.</p>
+                
+                <p>A través de la abstracción, construye mundos que suscitan pausas y silencios; espacios de detenimiento que invitan a una reflexión nacida de la emoción. Su obra es, en última instancia, una búsqueda de lo invisible manifestado en lo tangible.</p>
+                
+                <br>
+                <h2>Nota biográfica</h2>
+                <p>Manuel Munilla nació en Buenos Aires, Argentina, en 1983. Su formación en la pintura comenzó en el año 2001 y se desarrolló principalmente bajo la guía de los maestros Elba Soto y Julio Lavallén, con quienes profundizó en el estudio de la figura humana.<br>
+                Participó en diversas exposiciones individuales y colectivas, y sus pinturas integran colecciones privadas en Argentina y el exterior.<br>Vive y trabaja en Miramar, Provincia de Buenos Aires.</p>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <section class="contact-container">
+            <h2>Consultas</h2>
+            <p class="contact-intro">
+                Para la adquisición y envío de obras o cualquier otra inquietud, puede enviar un mensaje a través del siguiente formulario o por los canales directos que figuran al pie.
+            </p>
+            <br>
+            <form name="contacto-web" method="POST" action="/gracias.html" data-netlify="true" class="contact-form">
+                <input type="hidden" name="form-name" value="contacto-web" />
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" rows="4" placeholder="Escribe tu consulta aquí..." required></textarea>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </div>
+            </form>
+
+            <div class="other-channels">
+                <ul class="contact-links">
+                    <li>WhatsApp <a href="https://wa.me/5492291400476" target="_blank">Enviar mensaje</a></li>
+                    <li>Email <a href="mailto:manuelmunilla@gmail.com">manuelmunilla@gmail.com</a></li>
+                    <li>Instagram <a href="https://instagram.com/manuel.munilla" target="_blank">@manuel.munilla</a></li>
+                </ul>
+            </div>
+        </section>
+   
+    </main>
+    
+    <footer>
+        <div class="footer-icons">
+            <a href="https://wa.me/5492291400476" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/manuel.munilla" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:manuelmunilla@gmail.com" title="Email"><i class="far fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Manuel Munilla</p>
+    </footer>
+</body>
+</html>
